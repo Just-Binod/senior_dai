@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subjects - Senior दाई</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.0/cdn.min.js"
+      defer
+    ></script>
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+      .fade-in-up {
+        animation: fadeInUp 0.6s ease-out;
+      }
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+      .hover-scale {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .hover-scale:hover {
+        transform: scale(1.03);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-900 font-sans antialiased">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg sticky top-0 z-10">
+      <div
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center space-x-4">
+          <img
+            src="https://via.placeholder.com/50?text=Logo"
+            alt="Senior दाई Logo"
+            class="h-14 w-14 rounded-full pulse"
+          />
+          <h1 class="text-3xl font-extrabold tracking-tight">Senior दाई</h1>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="index.html" class="text-lg hover:text-white/80 transition"
+            >Home</a
+          >
+          <a href="about.html" class="text-lg hover:text-white/80 transition"
+            >About</a
+          >
+          <a href="contact.html" class="text-lg hover:text-white/80 transition"
+            >Contact</a
+          >
+        </nav>
+        <button
+          class="md:hidden focus:outline-none"
+          x-on:click="mobileMenuOpen = !mobileMenuOpen"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div
+      class="container mx-auto px-4 py-12"
+      x-data="{
+        semester: new URLSearchParams(window.location.search).get('semester'),
+        subjects: {
+          '1': [
+            { name: 'Basic Electrical Engineering', link: 'https://github.com/Just-Binod/BE-COMP/tree/1stsem/BE%20computer%201st%20sem%20important%20files/Basic%20Electrical%20engineering%20(BEE)' },
+    { name: 'Calculus - I', link: 'https://github.com/Just-Binod/BE-COMP/tree/1stsem/BE%20computer%201st%20sem%20important%20files/Calculus%20___i' },
+    { name: 'Communication Techniques', link: 'https://github.com/Just-Binod/BE-COMP/tree/1stsem/BE%20computer%201st%20sem%20important%20files/communication%20technique%20%20%20(C.T)' },
+    { name: 'Computer Workshop(not available) ', link: '' },
+    { name: 'Digital Logic', link: 'https://github.com/Just-Binod/BE-COMP/tree/1stsem/BE%20computer%201st%20sem%20important%20files/Digital%20Logic%20%20(DL)' },
+    { name: 'Electronics Devices and Circuits', link: 'https://drive.google.com/sem1-elx102' },
+    { name: 'Programming in C', link: 'https://github.com/Just-Binod/BE-COMP/tree/1stsem/BE%20computer%201st%20sem%20important%20files/programming%20in%20C%20!' },
+      { name: 'Papers ', link: 'https://drive.google.com/drive/folders/1vD3eypS1OqvFpisJbSPm9bd0av6G8rEp?usp=drive_link' }
+
+          ],
+          '2': [
+            { name: 'Algebra and Geometry', link: 'https://drive.google.com/drive/folders/12XtVQmu4wQfXQx3MacTmfJ7iXTEAiRkR?usp=sharing' },
+    { name: 'Applied Chemistry', link: 'https://drive.google.com/drive/folders/17ADmylVRIxvWp7DKxDEi88tAVTT9f9Hr?usp=sharing' },
+    { name: 'Applied Physics', link: 'https://drive.google.com/drive/folders/1AN10MWbY-vJycp7e9FlNDdDQvQAvuQ0x?usp=drive_link' },
+    { name: 'Basic Engineering Drawing', link: 'https://drive.google.com/drive/folders/1cWlHFtzBeov_sb5zAZ2gut7Xi6erPgCD?usp=drive_link' },
+    { name: 'Data Structure and Algorithms', link: 'https://drive.google.com/drive/folders/1-DKUTChlSudZBhqhk66CLyJX1HqYOVDc?usp=drive_link' },
+    { name: 'Instrumentation', link: 'https://drive.google.com/drive/folders/1Qr587MjuzdMUzrENx1APAOkgN6iQJrLW?usp=drive_link' },
+    { name: 'Object Oriented Programming in C++', link: 'https://drive.google.com/sem2-cmp162' },
+      { name: 'Papers ', link: 'https://drive.google.com/drive/folders/1rPov97eLU9BqyNLbNaqxTu_3zuhr0ygk?usp=drive_link' }
+          ],
+          '3': [
+            { name: 'Calculus - II', link: 'https://drive.google.com/drive/folders/1qHx5R-rgWuIHaJVlimOqd41OAn_LIH8p?usp=drive_link' },
+    { name: 'Computer Graphics', link: 'https://drive.google.com/drive/folders/1YF1rv7NuV88kveo0JbJN27WBw0n3p7-V?usp=sharing' },
+    { name: 'Data Communication', link: 'https://drive.google.com/drive/folders/1-hCmioKIufmD2sMXot56ahNw2NMVL1ec?usp=drive_link' },
+    { name: 'Database Management System', link: 'https://drive.google.com/drive/folders/1bEVSLFhDJXzDUHt_8DrKIj1SeJb-nz4H?usp=drive_link' },
+    { name: 'Microprocessor and ALP', link: 'https://drive.google.com/drive/folders/1Mtfe3OP2CFvA5enHaP0UCT3-h8sZjArw?usp=drive_link' },
+    { name: 'Operating Systems', link: 'https://drive.google.com/drive/folders/1VpdgmVSVSJ8tctmyGSab2kvHfedANU6F?usp=drive_link' },
+      { name: 'Papers ', link: 'https://drive.google.com/drive/folders/1mRsgFm97zb1JjPgQ7Q_q_7ZjVswCZMxU?usp=drive_link' }
+          ],
+          '4': [
+          { name: 'Advanced Programming with Java', link: 'https://drive.google.com/drive/folders/1AgXu_toaXJAEM0YWZ1vwQyX5hjJWvlpW?usp=drive_link' },
+    { name: 'Applied Mathematics', link: 'https://drive.google.com/drive/folders/1OmXieXbiEj7gwhW_93gUX8d4ybTeaTAD?usp=drive_link' },
+    { name: 'Computer Architecture', link: 'https://drive.google.com/drive/folders/1bJXauTPTi9qbJTBE7VU9HSMgAVI4F4MT?usp=drive_link' },
+    { name: 'Numerical Methods', link: 'https://drive.google.com/drive/folders/1Q-3b6FZ95-jjo3bSJY2mx7xOpos2OI4v?usp=drive_link' },
+    { name: 'Research Fundamentals', link: 'https://drive.google.com/drive/folders/1j4QTFjf_B0eLnhweZWpHOlmhP72ybuQ0?usp=drive_link' },
+    { name: 'Theory of Computation', link: 'https://drive.google.com/drive/folders/1o-pnjwb2zq_TlaDzM3W9uE8z1RBIlUfi?usp=drive_link4' },
+      { name: 'Papers ', link: 'https://drive.google.com/drive/folders/1W-qcsb_S8coHxoKwZmxqxwQqOjY8Mxfv?usp=drive_link' }
+          ],
+          '5': [
+             { name: 'Artificial Intelligence', link: 'https://drive.google.com/drive/folders/1mCJ7yCUlZL46wSD3CrsTn6BMFcepL7XM?usp=drive_link' },
+    { name: 'Digital Signal Analysis and Processing', link: 'https://drive.google.com/drive/folders/1xzYr75e0mxWbPt2cM5KK11exx9LpIh28?usp=drive_link' },
+    { name: 'Embedded System', link: 'https://drive.google.com/drive/folders/1jkcfuehbDel3tO1H_oBQbBnyhUhL5Ngt?usp=drive_link' },
+    { name: 'Engineering Management', link: 'https://drive.google.com/drive/folders/1Ul24vVnz05gjfVnpQu0VydnW42sGZZZU?usp=drive_link' },
+    { name: 'Probability and Statistics', link: 'https://drive.google.com/drive/folders/1MbF417Wn8X7pa54L4NdZRD-oBZmKuCzq?usp=drive_link6' },
+    { name: 'Software Engineering', link: 'https://drive.google.com/drive/folders/1QmolfoMQVhxKlTGvpkher0qy3ncwAeAJ?usp=drive_link' },
+      { name: 'Papers ', link: 'https://drive.google.com/drive/folders/1NF6RO1mAkX_4TYQuFSja7rkgV-8JLKZy?usp=drive_link' }
+          ],
+          '6': [
+           { name: 'Computer Networks', link: 'https://drive.google.com/sem6-cmp344' },
+    { name: 'Data Science and Analytics', link: 'https://drive.google.com/sem6-cmp360' },
+    { name: 'Elective I', link: 'https://drive.google.com/sem6-elective1' },
+    { name: 'Image Processing and Pattern Recognition', link: 'https://drive.google.com/sem6-cmp362' },
+    { name: 'Machine Learning', link: 'https://drive.google.com/sem6-cmp364' },
+    { name: 'Project I', link: 'https://drive.google.com/sem6-pri360' },
+    { name: 'Simulation and Modeling', link: 'https://drive.google.com/sem6-cmp338' },
+      { name: 'Papers ', link: '' }
+          ],
+          '7': [
+            { name: 'Cloud Computing and Virtualization', link: 'https://drive.google.com/sem7-cmp424' },
+    { name: 'Computer Design', link: 'https://drive.google.com/sem7-cmp422' },
+    { name: 'Elective II', link: 'https://drive.google.com/sem7-elective2' },
+    { name: 'Engineering Economics', link: 'https://drive.google.com/sem7-mgt230' },
+    { name: 'Entrepreneurship and Professional Practice', link: 'https://drive.google.com/sem7-mgt332' },
+    { name: 'Network and Cyber Security', link: 'https://drive.google.com/sem7-cmp426' },
+      { name: 'Papers ', link: '' }
+          ],
+          '8': [
+            { name: 'Elective III', link: 'https://drive.google.com/sem8-elective3' },
+    { name: 'Internship', link: 'https://drive.google.com/sem8-int492' },
+    { name: 'Project II', link: 'https://drive.google.com/sem8-pri482' },
+      { name: 'Papers ', link: '' }
+          ]
+        }
+      }"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-extrabold text-center text-sky-800 mb-12 fade-in-up"
+      >
+        <span x-text="'Semester ' + semester + ' Subjects'"></span>
+      </h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <template x-for="subject in subjects[semester]" :key="subject.name">
+          <div
+            class="border border-gray-200 bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 hover-scale"
+          >
+            <h3
+              class="text-xl font-medium text-gray-800"
+              x-text="subject.name"
+            ></h3>
+            <a
+              :href="subject.link"
+              target="_blank"
+              class="inline-block mt-4 px-5 py-2 bg-sky-600 text-white font-semibold text-sm rounded-lg hover:bg-sky-700 transition"
+            >
+              View Notes
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8">
+      <div class="container mx-auto px-4 text-center">
+        <p class="text-base font-medium">
+          © 2025 Senior दाई. All rights reserved.
+        </p>
+        <div class="mt-6 flex justify-center space-x-6">
+          <a href="#" class="text-white/80 hover:text-white transition"
+            >Privacy Policy</a
+          >
+          <a href="#" class="text-white/80 hover:text-white transition"
+            >Terms of Service</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semesters - Senior दाई</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.0/cdn.min.js"
+      defer
+    ></script>
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+      .fade-in-up {
+        animation: fadeInUp 0.6s ease-out;
+      }
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+      .hover-scale {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .hover-scale:hover {
+        transform: scale(1.03);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-900 font-sans antialiased">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg sticky top-0 z-10">
+      <div
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center space-x-4">
+          <img
+            src="https://via.placeholder.com/50?text=Logo"
+            alt="Senior दाई Logo"
+            class="h-14 w-14 rounded-full pulse"
+          />
+          <h1 class="text-3xl font-extrabold tracking-tight">Senior दाई</h1>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="index.html" class="text-lg hover:text-white/80 transition"
+            >Home</a
+          >
+          <a href="about.html" class="text-lg hover:text-white/80 transition"
+            >About</a
+          >
+          <a href="contact.html" class="text-lg hover:text-white/80 transition"
+            >Contact</a
+          >
+        </nav>
+        <button
+          class="md:hidden focus:outline-none"
+          x-on:click="mobileMenuOpen = !mobileMenuOpen"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12">
+      <h1
+        class="text-4xl md:text-5xl font-extrabold text-center text-sky-800 mb-12 fade-in-up"
+      >
+        BE Computer Semesters
+      </h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a
+          href="subjects.html?semester=1"
+          class="bg-white rounded-2xl shadow-lg p-6 text-center fade-in-up hover-scale"
+        >
+          <h2 class="text-2xl font-semibold text-sky-800">Semester 1</h2>
+        </a>
+        <a
+          href="subjects.html?semester=2"
+          class="bg-white rounded-2xl shadow-lg p-6 text-center fade-in-up hover-scale"
+        >
+          <h2 class="text-2xl font-semibold text-sky-800">Semester 2</h2>
+        </a>
+        <a
+          href="subjects.html?semester=3"
+          class="bg-white rounded-2xl shadow-lg p-6 text-center fade-in-up hover-scale"
+        >
+          <h2 class="text-2xl font-semibold text-sky-800">Semester 3</h2>
+        </a>
+        <a
+          href="subjects.html?semester=4"
+          class="bg-white rounded-2xl shadow-lg p-6 text-center fade-in-up hover-scale"
+        >
+          <h2 class="text-2xl font-semibold text-sky-800">Semester 4</h2>
+        </a>
+        <a
+          href="subjects.html?semester=5"
+          class="bg-white rounded-2xl shadow-lg p-6 text-center fade-in-up hover-scale"
+        >
+          <h2 class="text-2xl font-semibold text-sky-800">Semester 5</h2>
+        </a>
+        <a
+          href="subjects.html?semester=6"
+          class="bg-white rounded-2xl shadow-lg p-6 text-center fade-in-up hover-scale"
+        >
+          <h2 class="text-2xl font-semibold text-sky-800">Semester 6</h2>
+        </a>
+        <a
+          href="subjects.html?semester=7"
+          class="bg-white rounded-2xl shadow-lg p-6 text-center fade-in-up hover-scale"
+        >
+          <h2 class="text-2xl font-semibold text-sky-800">Semester 7</h2>
+        </a>
+        <a
+          href="subjects.html?semester=8"
+          class="bg-white rounded-2xl shadow-lg p-6 text-center fade-in-up hover-scale"
+        >
+          <h2 class="text-2xl font-semibold text-sky-800">Semester 8</h2>
+        </a>
+      </div>
+    </div>
+    <div>
+      <a target="_blank" href="https://github.com/Just-Binod/BE-COMP"
+        >For Overall Note In GitHub Repo</a
+      >
+    </div>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8 fixed bottom-0 left-0 right-0">
+      <div class="container mx-auto px-4 text-center">
+        <p class="text-base font-medium">
+          © 2025 Senior दाई. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
